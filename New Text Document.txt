@@ -1,2 +1,14 @@
-Hello
-Bye
+subprocess.run([
+    'dbus-send',
+    '--session',
+    '--dest=org.freedesktop.Notifications',
+    '/org/freedesktop/Notifications',
+    'org.freedesktop.Notifications.Notify',
+    'string:AppName',
+    'uint32:0',
+    'string:Flask Notification',
+    'string:' + message,
+    'array:string:',
+    'dict:string:string:{}',
+    'int32:-1'
+])
